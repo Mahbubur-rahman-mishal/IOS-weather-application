@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4738BA27B1AA5D3F2236A5ED /* Pods_temo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BEBBD16956BAC6637B1FD3 /* Pods_temo.framework */; };
+		D077822D23288FEB00FDE313 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077822C23288FEB00FDE313 /* addViewController.swift */; };
+		D077822F2328A43800FDE313 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077822E2328A43800FDE313 /* Place.swift */; };
+		D0869BDA232A002E00C5380F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0869BD9232A002E00C5380F /* Weather.swift */; };
+		D09B2E16232645FC00414831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B2E15232645FC00414831 /* AppDelegate.swift */; };
+		D09B2E18232645FC00414831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B2E17232645FC00414831 /* ViewController.swift */; };
+		D09B2E1B232645FC00414831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09B2E19232645FC00414831 /* Main.storyboard */; };
+		D09B2E1D232645FE00414831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09B2E1C232645FE00414831 /* Assets.xcassets */; };
+		D09B2E20232645FE00414831 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09B2E1E232645FE00414831 /* LaunchScreen.storyboard */; };
+		D09B2E2A2326476200414831 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B2E292326476200414831 /* SearchTableViewController.swift */; };
+		D09B2E3323264D4500414831 /* LocationNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B2E3123264D4500414831 /* LocationNameTableViewCell.swift */; };
+		D09B2E3423264D4500414831 /* LocationNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09B2E3223264D4500414831 /* LocationNameTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1E73AC6DE641BD84D55BACC9 /* Pods-temo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-temo.debug.xcconfig"; path = "Target Support Files/Pods-temo/Pods-temo.debug.xcconfig"; sourceTree = "<group>"; };
+		7092D468795AFF8754D4C709 /* Pods-temo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-temo.release.xcconfig"; path = "Target Support Files/Pods-temo/Pods-temo.release.xcconfig"; sourceTree = "<group>"; };
+		71BEBBD16956BAC6637B1FD3 /* Pods_temo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_temo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D077822C23288FEB00FDE313 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
+		D077822E2328A43800FDE313 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		D0869BD9232A002E00C5380F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		D09B2E12232645FC00414831 /* temo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D09B2E15232645FC00414831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D09B2E17232645FC00414831 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D09B2E1A232645FC00414831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D09B2E1C232645FE00414831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D09B2E1F232645FE00414831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D09B2E21232645FE00414831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D09B2E292326476200414831 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		D09B2E3123264D4500414831 /* LocationNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNameTableViewCell.swift; sourceTree = "<group>"; };
+		D09B2E3223264D4500414831 /* LocationNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationNameTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D09B2E0F232645FC00414831 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4738BA27B1AA5D3F2236A5ED /* Pods_temo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B17F8BC654AB2D5F69A84BB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71BEBBD16956BAC6637B1FD3 /* Pods_temo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C548054384260AC6D9B00C5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E73AC6DE641BD84D55BACC9 /* Pods-temo.debug.xcconfig */,
+				7092D468795AFF8754D4C709 /* Pods-temo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D09B2E09232645FC00414831 = {
+			isa = PBXGroup;
+			children = (
+				D09B2E3123264D4500414831 /* LocationNameTableViewCell.swift */,
+				D09B2E3223264D4500414831 /* LocationNameTableViewCell.xib */,
+				D09B2E292326476200414831 /* SearchTableViewController.swift */,
+				D09B2E14232645FC00414831 /* temo */,
+				D09B2E13232645FC00414831 /* Products */,
+				C548054384260AC6D9B00C5D /* Pods */,
+				B17F8BC654AB2D5F69A84BB8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D09B2E13232645FC00414831 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D09B2E12232645FC00414831 /* temo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D09B2E14232645FC00414831 /* temo */ = {
+			isa = PBXGroup;
+			children = (
+				D09B2E15232645FC00414831 /* AppDelegate.swift */,
+				D09B2E17232645FC00414831 /* ViewController.swift */,
+				D09B2E19232645FC00414831 /* Main.storyboard */,
+				D077822E2328A43800FDE313 /* Place.swift */,
+				D0869BD9232A002E00C5380F /* Weather.swift */,
+				D077822C23288FEB00FDE313 /* addViewController.swift */,
+				D09B2E1C232645FE00414831 /* Assets.xcassets */,
+				D09B2E1E232645FE00414831 /* LaunchScreen.storyboard */,
+				D09B2E21232645FE00414831 /* Info.plist */,
+			);
+			path = temo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D09B2E11232645FC00414831 /* temo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D09B2E24232645FE00414831 /* Build configuration list for PBXNativeTarget "temo" */;
+			buildPhases = (
+				14DBBB94E60C21CDF156155B /* [CP] Check Pods Manifest.lock */,
+				D09B2E0E232645FC00414831 /* Sources */,
+				D09B2E0F232645FC00414831 /* Frameworks */,
+				D09B2E10232645FC00414831 /* Resources */,
+				9CDFE927FAEBA8FF6E0D2058 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = temo;
+			productName = temo;
+			productReference = D09B2E12232645FC00414831 /* temo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D09B2E0A232645FC00414831 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Mahbubur Rahman Mishal";
+				TargetAttributes = {
+					D09B2E11232645FC00414831 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = D09B2E0D232645FC00414831 /* Build configuration list for PBXProject "temo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D09B2E09232645FC00414831;
+			productRefGroup = D09B2E13232645FC00414831 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D09B2E11232645FC00414831 /* temo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D09B2E10232645FC00414831 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D09B2E20232645FE00414831 /* LaunchScreen.storyboard in Resources */,
+				D09B2E1D232645FE00414831 /* Assets.xcassets in Resources */,
+				D09B2E1B232645FC00414831 /* Main.storyboard in Resources */,
+				D09B2E3423264D4500414831 /* LocationNameTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14DBBB94E60C21CDF156155B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-temo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CDFE927FAEBA8FF6E0D2058 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-temo/Pods-temo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-temo/Pods-temo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-temo/Pods-temo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D09B2E0E232645FC00414831 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D09B2E2A2326476200414831 /* SearchTableViewController.swift in Sources */,
+				D09B2E18232645FC00414831 /* ViewController.swift in Sources */,
+				D09B2E16232645FC00414831 /* AppDelegate.swift in Sources */,
+				D077822F2328A43800FDE313 /* Place.swift in Sources */,
+				D077822D23288FEB00FDE313 /* addViewController.swift in Sources */,
+				D09B2E3323264D4500414831 /* LocationNameTableViewCell.swift in Sources */,
+				D0869BDA232A002E00C5380F /* Weather.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D09B2E19232645FC00414831 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D09B2E1A232645FC00414831 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D09B2E1E232645FE00414831 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D09B2E1F232645FE00414831 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D09B2E22232645FE00414831 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D09B2E23232645FE00414831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D09B2E25232645FE00414831 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E73AC6DE641BD84D55BACC9 /* Pods-temo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SA368PV2L6;
+				INFOPLIST_FILE = temo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mishal.temo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D09B2E26232645FE00414831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7092D468795AFF8754D4C709 /* Pods-temo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SA368PV2L6;
+				INFOPLIST_FILE = temo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mishal.temo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D09B2E0D232645FC00414831 /* Build configuration list for PBXProject "temo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D09B2E22232645FE00414831 /* Debug */,
+				D09B2E23232645FE00414831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D09B2E24232645FE00414831 /* Build configuration list for PBXNativeTarget "temo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D09B2E25232645FE00414831 /* Debug */,
+				D09B2E26232645FE00414831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D09B2E0A232645FC00414831 /* Project object */;
+}
