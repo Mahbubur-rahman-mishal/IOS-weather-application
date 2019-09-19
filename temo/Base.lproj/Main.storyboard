@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--City List View Controller-->
         <scene sceneID="qon-2D-rEx">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="SSy-DC-wKa" customClass="SearchViewController" customModule="temo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityListViewController" id="SSy-DC-wKa" customClass="CityListViewController" customModule="temo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8UD-jn-Xcr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1O0-u6-LSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2021.7391304347827" y="644.86607142857144"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Yd4-pH-PaV">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="o6O-Qf-LKz" customClass="DetailViewController" customModule="temo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IrK-KX-pdV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WlP-e3-yce"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHa-Wn-5NO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="361"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="tLA-vB-T5z">
@@ -95,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lg-oN-whm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2821.739130434783" y="644.86607142857144"/>
+            <point key="canvasLocation" x="2813" y="1049"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AmG-kt-yP3">

@@ -10,15 +10,15 @@ import UIKit
 import RealmSwift
 import Alamofire
 
-class SearchViewController: UIViewController, UITableViewDataSource {
-    
+class CityListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var weatherDataForCity = [Weather]()
     let realm = try! Realm()
     var savedPlace: Results<Place> {
         get {
             return realm.objects(Place.self)
         }
     }
-    
+
     @IBOutlet weak private var tableView: UITableView!
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         if let addViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "addViewController") as? addViewController {
@@ -45,7 +45,7 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        tableView.delegate = self as? UITableViewDelegate
+        tableView.delegate = self
         let nib = UINib(nibName: "LocationNameTableViewCell", bundle: Bundle.main)
         tableView.register(nib , forCellReuseIdentifier: "LocationNameTableViewCell")
         title = "City Name"
@@ -63,36 +63,53 @@ class SearchViewController: UIViewController, UITableViewDataSource {
         return savedPlace.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            
+            detailViewController.weatherData = weatherDataForCity[indexPath.row]
+            navigationController?.pushViewController(detailViewController, animated: true)
+            
+        
+            tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationNameTableViewCell", for: indexPath) as! LocationNameTableViewCell
-//        var weatherofthiscity = Weather.self
-//        let lat = savedPlace[indexPath.row].lat
-//        let lon = savedPlace[indexPath.row].lon
-//        let url = "https://api.darksky.net/forecast/ed7e08cdf6c2bcd62440207c1a9b34e1/\(lat),\(lon)"
-        //        print(url)
-//        Alamofire.request(url, method: .get).responseData { response in
-//            if response.result.isFailure, let error = response.result.error {
-//                print(error)
-//            }
-//
-//            if response.result.isSuccess, let value = response.result.value{
-//                do {
-//                    let weather = try JSONDecoder().decode(Weather.self, from: value)
-//                    weatherofthiscity = weather
-//                } catch {
-//                    print(error)
-//                }
-//
-//            }
-//
-//        }
+
+        let lat = savedPlace[indexPath.row].lat
+        let lon = savedPlace[indexPath.row].lon
+        let url = "https://api.darksky.net/forecast/ed7e08cdf6c2bcd62440207c1a9b34e1/\(lat),\(lon)"
+        Alamofire.request(url, method: .get).responseData { response in
+            if response.result.isFailure, let error = response.result.error {
+                print(error)
+            }
+
+            if response.result.isSuccess, let value = response.result.value{
+                do {
+                    let weather = try JSONDecoder().decode(Weather.self, from: value)
+                    self.weatherDataForCity.append(weather)
+                    let temp = String(Int(5.0 / 9.0 * (Double(self.weatherDataForCity[indexPath.row].currently.temperature) - 32.0)))
+                    cell.locationLabel.text = self.savedPlace[indexPath.row].name
+                    cell.tempLabel.text = "\(temp)°C"
+                    //        cell.tempImage = "Clear.png"
+                } catch {
+                    print(error)
+                }
+                
+
+            }
+
+        }
         cell.locationLabel.text = savedPlace[indexPath.row].name
-        cell.tempLabel.text = "29"
 //        cell.tempImage = "Clear.png"
         return cell
     }
     
     
+
+
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
