@@ -65,10 +65,10 @@ class CityListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            
-            detailViewController.weatherData = weatherDataForCity[indexPath.row]
+//            detailViewController.weatherData = weatherDataForCity[indexPath.row]
+            detailViewController.lat = savedPlace[indexPath.row].lat
+            detailViewController.lon = savedPlace[indexPath.row].lon
             navigationController?.pushViewController(detailViewController, animated: true)
-            
         
             tableView.deselectRow(at: indexPath, animated: true)
             }
@@ -90,7 +90,7 @@ class CityListViewController: UIViewController, UITableViewDataSource, UITableVi
                 do {
                     let weather = try JSONDecoder().decode(Weather.self, from: value)
                     self.weatherDataForCity.append(weather)
-                    let temp = String(Int(5.0 / 9.0 * (Double(self.weatherDataForCity[indexPath.row].currently.temperature) - 32.0)))
+                    let temp = String(Int(5.0 / 9.0 * (Double(weather.currently.temperature) - 32.0)))
                     cell.locationLabel.text = self.savedPlace[indexPath.row].name
                     cell.tempLabel.text = "\(temp)°C"
                     //        cell.tempImage = "Clear.png"

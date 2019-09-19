@@ -9,9 +9,17 @@
 /* Begin PBXBuildFile section */
 		4738BA27B1AA5D3F2236A5ED /* Pods_temo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BEBBD16956BAC6637B1FD3 /* Pods_temo.framework */; };
 		D028E6292332175500D4004F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D028E6282332175500D4004F /* DetailViewController.swift */; };
+		D031E095233354E70013EFF5 /* CurrentWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031E094233354E70013EFF5 /* CurrentWeatherTableViewCell.xib */; };
+		D031E097233355300013EFF5 /* CurrentWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031E096233355300013EFF5 /* CurrentWeatherTableViewCell.swift */; };
 		D077822D23288FEB00FDE313 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077822C23288FEB00FDE313 /* addViewController.swift */; };
 		D077822F2328A43800FDE313 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077822E2328A43800FDE313 /* Place.swift */; };
 		D0869BDA232A002E00C5380F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0869BD9232A002E00C5380F /* Weather.swift */; };
+		D08A877523338BE200D8EDA4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A877323338BE200D8EDA4 /* CollectionViewCell.swift */; };
+		D08A877623338BE200D8EDA4 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A877423338BE200D8EDA4 /* CollectionViewCell.xib */; };
+		D08A877923338C0D00D8EDA4 /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A877723338C0D00D8EDA4 /* HourlyTableViewCell.swift */; };
+		D08A877A23338C0D00D8EDA4 /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A877823338C0D00D8EDA4 /* HourlyTableViewCell.xib */; };
+		D08A877D2333BBA400D8EDA4 /* WeeklyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A877B2333BBA400D8EDA4 /* WeeklyTableViewCell.swift */; };
+		D08A877E2333BBA400D8EDA4 /* WeeklyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A877C2333BBA400D8EDA4 /* WeeklyTableViewCell.xib */; };
 		D09B2E16232645FC00414831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B2E15232645FC00414831 /* AppDelegate.swift */; };
 		D09B2E18232645FC00414831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B2E17232645FC00414831 /* ViewController.swift */; };
 		D09B2E1B232645FC00414831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09B2E19232645FC00414831 /* Main.storyboard */; };
@@ -27,9 +35,17 @@
 		7092D468795AFF8754D4C709 /* Pods-temo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-temo.release.xcconfig"; path = "Target Support Files/Pods-temo/Pods-temo.release.xcconfig"; sourceTree = "<group>"; };
 		71BEBBD16956BAC6637B1FD3 /* Pods_temo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_temo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D028E6282332175500D4004F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D031E094233354E70013EFF5 /* CurrentWeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CurrentWeatherTableViewCell.xib; path = ../../../../.Trash/CurrentWeatherTableViewCell.xib; sourceTree = "<group>"; };
+		D031E096233355300013EFF5 /* CurrentWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentWeatherTableViewCell.swift; path = ../../../../.Trash/CurrentWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		D077822C23288FEB00FDE313 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		D077822E2328A43800FDE313 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		D0869BD9232A002E00C5380F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		D08A877323338BE200D8EDA4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D08A877423338BE200D8EDA4 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		D08A877723338C0D00D8EDA4 /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
+		D08A877823338C0D00D8EDA4 /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
+		D08A877B2333BBA400D8EDA4 /* WeeklyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewCell.swift; sourceTree = "<group>"; };
+		D08A877C2333BBA400D8EDA4 /* WeeklyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyTableViewCell.xib; sourceTree = "<group>"; };
 		D09B2E12232645FC00414831 /* temo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09B2E15232645FC00414831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D09B2E17232645FC00414831 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +115,15 @@
 				D09B2E15232645FC00414831 /* AppDelegate.swift */,
 				D09B2E17232645FC00414831 /* ViewController.swift */,
 				D09B2E19232645FC00414831 /* Main.storyboard */,
+				D08A877323338BE200D8EDA4 /* CollectionViewCell.swift */,
+				D08A877B2333BBA400D8EDA4 /* WeeklyTableViewCell.swift */,
+				D08A877C2333BBA400D8EDA4 /* WeeklyTableViewCell.xib */,
+				D08A877423338BE200D8EDA4 /* CollectionViewCell.xib */,
+				D08A877723338C0D00D8EDA4 /* HourlyTableViewCell.swift */,
+				D08A877823338C0D00D8EDA4 /* HourlyTableViewCell.xib */,
 				D077822E2328A43800FDE313 /* Place.swift */,
+				D031E094233354E70013EFF5 /* CurrentWeatherTableViewCell.xib */,
+				D031E096233355300013EFF5 /* CurrentWeatherTableViewCell.swift */,
 				D0869BD9232A002E00C5380F /* Weather.swift */,
 				D077822C23288FEB00FDE313 /* addViewController.swift */,
 				D09B2E1C232645FE00414831 /* Assets.xcassets */,
@@ -170,8 +194,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09B2E20232645FE00414831 /* LaunchScreen.storyboard in Resources */,
+				D031E095233354E70013EFF5 /* CurrentWeatherTableViewCell.xib in Resources */,
+				D08A877623338BE200D8EDA4 /* CollectionViewCell.xib in Resources */,
 				D09B2E1D232645FE00414831 /* Assets.xcassets in Resources */,
+				D08A877E2333BBA400D8EDA4 /* WeeklyTableViewCell.xib in Resources */,
 				D09B2E1B232645FC00414831 /* Main.storyboard in Resources */,
+				D08A877A23338C0D00D8EDA4 /* HourlyTableViewCell.xib in Resources */,
 				D09B2E3423264D4500414831 /* LocationNameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,11 +253,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08A877523338BE200D8EDA4 /* CollectionViewCell.swift in Sources */,
+				D031E097233355300013EFF5 /* CurrentWeatherTableViewCell.swift in Sources */,
 				D09B2E2A2326476200414831 /* SearchTableViewController.swift in Sources */,
 				D09B2E18232645FC00414831 /* ViewController.swift in Sources */,
 				D09B2E16232645FC00414831 /* AppDelegate.swift in Sources */,
 				D077822F2328A43800FDE313 /* Place.swift in Sources */,
+				D08A877923338C0D00D8EDA4 /* HourlyTableViewCell.swift in Sources */,
 				D077822D23288FEB00FDE313 /* addViewController.swift in Sources */,
+				D08A877D2333BBA400D8EDA4 /* WeeklyTableViewCell.swift in Sources */,
 				D09B2E3323264D4500414831 /* LocationNameTableViewCell.swift in Sources */,
 				D0869BDA232A002E00C5380F /* Weather.swift in Sources */,
 				D028E6292332175500D4004F /* DetailViewController.swift in Sources */,
