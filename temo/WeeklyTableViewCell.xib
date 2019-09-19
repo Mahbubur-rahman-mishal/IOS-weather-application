@@ -20,14 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8d-MZ-oCP">
-                        <rect key="frame" x="16" y="16" width="114" height="20.5"/>
+                        <rect key="frame" x="10" y="16" width="120" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tyL-TK-QjP">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tyL-TK-QjP">
                         <rect key="frame" x="213" y="24" width="91" height="20.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maxt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEi-SD-RN6">
                                 <rect key="frame" x="0.0" y="0.0" width="38" height="20.5"/>
@@ -43,9 +42,8 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-53-Pag">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-53-Pag">
                         <rect key="frame" x="214" y="8" width="74.5" height="12"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4x-hm-o6F">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="12"/>
@@ -66,17 +64,31 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="ECb-53-Pag" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="214" id="0Ro-I0-Eeu"/>
+                    <constraint firstItem="tyL-TK-QjP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="6tH-VV-1Ih"/>
                     <constraint firstItem="ppp-lN-XuV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="BJ6-TC-ApD"/>
+                    <constraint firstItem="ECb-53-Pag" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BUm-SW-F1Q"/>
+                    <constraint firstAttribute="bottom" secondItem="ECb-53-Pag" secondAttribute="bottom" constant="32.5" id="KKO-0S-FUv"/>
                     <constraint firstAttribute="bottom" secondItem="C8d-MZ-oCP" secondAttribute="bottom" constant="16" id="Kcb-Ln-WW0"/>
                     <constraint firstItem="ppp-lN-XuV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="140" id="Mtd-AM-DfX"/>
+                    <constraint firstAttribute="trailing" secondItem="ECb-53-Pag" secondAttribute="trailing" constant="31.5" id="Q8i-FO-6JM"/>
                     <constraint firstAttribute="bottom" secondItem="ppp-lN-XuV" secondAttribute="bottom" constant="1" id="c6A-GL-Y8o"/>
+                    <constraint firstAttribute="trailing" secondItem="tyL-TK-QjP" secondAttribute="trailing" constant="16" id="en9-bs-DM6"/>
                     <constraint firstItem="C8d-MZ-oCP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="eyJ-VR-sKe"/>
-                    <constraint firstItem="C8d-MZ-oCP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lHO-AF-YNp"/>
+                    <constraint firstItem="tyL-TK-QjP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="213" id="h8w-mE-cJR"/>
+                    <constraint firstAttribute="bottom" secondItem="tyL-TK-QjP" secondAttribute="bottom" constant="8" id="kUJ-kJ-iLt"/>
+                    <constraint firstItem="C8d-MZ-oCP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lHO-AF-YNp"/>
                     <constraint firstAttribute="trailing" secondItem="ppp-lN-XuV" secondAttribute="trailing" constant="139" id="wCj-D8-hHw"/>
                     <constraint firstAttribute="trailing" secondItem="C8d-MZ-oCP" secondAttribute="trailing" constant="190" id="xyM-nL-qG9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dayLabel" destination="C8d-MZ-oCP" id="lJs-My-EWS"/>
+                <outlet property="maxTemperatureLabel" destination="fEi-SD-RN6" id="gdb-gI-nWC"/>
+                <outlet property="minTemperatureLabel" destination="mHE-Bx-ZHq" id="yDz-8k-61H"/>
+                <outlet property="weeklyImage" destination="ppp-lN-XuV" id="TXs-rV-Y5d"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="132.92410714285714"/>
         </tableViewCell>
     </objects>

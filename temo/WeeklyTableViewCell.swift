@@ -10,6 +10,10 @@ import UIKit
 
 class WeeklyTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weeklyImage: UIImageView!
+    @IBOutlet weak var maxTemperatureLabel: UILabel!
+    @IBOutlet weak var minTemperatureLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
