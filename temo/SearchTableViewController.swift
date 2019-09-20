@@ -68,6 +68,7 @@ class CityListViewController: UIViewController, UITableViewDataSource, UITableVi
 //            detailViewController.weatherData = weatherDataForCity[indexPath.row]
             detailViewController.lat = savedPlace[indexPath.row].lat
             detailViewController.lon = savedPlace[indexPath.row].lon
+            detailViewController.cityName = savedPlace[indexPath.row].name
             navigationController?.pushViewController(detailViewController, animated: true)
         
             tableView.deselectRow(at: indexPath, animated: true)

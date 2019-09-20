@@ -9,8 +9,42 @@ import Alamofire
 import UIKit
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var weatherData : Weather?
+    var lon = 0.0, lat = 0.0
+    var cityName = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let currentNib = UINib(nibName: "CurrentWeatherTableViewCell", bundle: Bundle.main)
+        tableView.register(currentNib , forCellReuseIdentifier: "CurrentWeatherTableViewCell")
+        let hourlyNib = UINib(nibName: "HourlyTableViewCell", bundle: Bundle.main)
+        tableView.register(hourlyNib, forCellReuseIdentifier: "HourlyTableViewCell")
+        let weeklyNib = UINib(nibName: "WeeklyTableViewCell", bundle: Bundle.main)
+        tableView.register(weeklyNib, forCellReuseIdentifier: "WeeklyTableViewCell")
+        title = cityName
+        
+        getWeatherData(lat: lat, lon: lon)
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 1
+        case 2:
+            return 7
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,8 +63,35 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         case 1:
             let hourlyWeatherCell = tableView.dequeueReusableCell(withIdentifier: "HourlyTableViewCell", for: indexPath) as! HourlyTableViewCell
-            hourlyWeatherCell.hourlyWeatherData = weatherData?.hourly
+            hourlyWeatherCell.lat = lat
+            hourlyWeatherCell.lon = lon
+//            if let check = weatherData?.hourly{
+//                hourlyWeatherCell.hourlyWeatherData = check
+//                print(check.summary)
+//            }
+            print(weatherData?.hourly.data.count ?? -100)
             return hourlyWeatherCell
+            
+        case 2:
+            let weeklyWeatherCell = tableView.dequeueReusableCell(withIdentifier: "WeeklyTableViewCell", for: indexPath) as! WeeklyTableViewCell
+            let dailyData = weatherData?.daily.data[indexPath.row]
+            if let day = dailyData?.time {
+                let time = Date(timeIntervalSince1970: TimeInterval(day))
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .short
+                let date = dateFormatter.date(from: dateFormatter.string(from: time))
+                dateFormatter.dateFormat = "EEEE"
+                weeklyWeatherCell.dayLabel.text = "\(dateFormatter.string(from: date!))"
+                let maxTemp = dailyData!.apparentTemperatureMax
+                let minTemp = dailyData!.apparentTemperatureMin
+                weeklyWeatherCell.maxTemperatureLabel.text = "\(Int(5.0 / 9.0 * ((maxTemp) - 32.0)))°C"
+                weeklyWeatherCell.minTemperatureLabel.text = "\(Int(5.0 / 9.0 * ((minTemp) - 32.0)))°C"
+                
+                
+                
+            }
+            return weeklyWeatherCell
+            
             
             
         default:
@@ -47,26 +108,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    @IBOutlet weak var tableView: UITableView!
-    var weatherData : Weather?
-    var lon = 0.0, lat = 0.0
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        getWeatherData(lat: lat, lon: lon)
-        let currentNib = UINib(nibName: "CurrentWeatherTableViewCell", bundle: Bundle.main)
-        tableView.register(currentNib , forCellReuseIdentifier: "CurrentWeatherTableViewCell")
-        let hourlyNib = UINib(nibName: "HourlyTableViewCell", bundle: Bundle.main)
-        tableView.register(hourlyNib, forCellReuseIdentifier: "HourlyTableViewCell")
-        title = "City Name"
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
-    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
@@ -78,6 +119,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {return ""}
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 1:
+            return 95
+        case 2:
+            return 55
+        default:
+            return 120
+        }
+    }
     
     func getWeatherData(lat : Double, lon : Double) {
         let url = "https://api.darksky.net/forecast/ed7e08cdf6c2bcd62440207c1a9b34e1/\(lat),\(lon)"
@@ -90,11 +141,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 do {
                     let weather = try JSONDecoder().decode(Weather.self, from: value)
                     self.weatherData = weather
+                    self.tableView.reloadData()
                 } catch {
                     print(error)
                 }
             }
-            self.tableView.reloadData()
+            
     }
         
         
