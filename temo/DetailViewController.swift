@@ -26,7 +26,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(hourlyNib, forCellReuseIdentifier: "HourlyTableViewCell")
         let weeklyNib = UINib(nibName: "WeeklyTableViewCell", bundle: Bundle.main)
         tableView.register(weeklyNib, forCellReuseIdentifier: "WeeklyTableViewCell")
-        title = cityName
+        title = cityName.uppercased()
+        
         
         getWeatherData(lat: lat, lon: lon)
         
@@ -58,6 +59,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 dateFormatter.dateStyle = .full
                 let time = Date(timeIntervalSince1970: TimeInterval(date))
                 currentWeatherCell.currentDate.text = "\(dateFormatter.string(from: time))"
+                currentWeatherCell.currentTemparatureImage.image = setIcon(icon: (weatherData?.currently.icon)!)
             }
             return currentWeatherCell
             
@@ -86,9 +88,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let minTemp = dailyData!.apparentTemperatureMin
                 weeklyWeatherCell.maxTemperatureLabel.text = "\(Int(5.0 / 9.0 * ((maxTemp) - 32.0)))°C"
                 weeklyWeatherCell.minTemperatureLabel.text = "\(Int(5.0 / 9.0 * ((minTemp) - 32.0)))°C"
-                
-                
-                
+                weeklyWeatherCell.weeklyImage.image = setIcon(icon: dailyData!.icon)
             }
             return weeklyWeatherCell
             
@@ -111,7 +111,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Current Weather"
+            return ""
         } else if section == 1 {
             return "Hourly Forecast"
         } else if section == 2 {
@@ -130,6 +130,37 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func setIcon(icon: String) -> UIImage {
+        switch icon {
+        case "cloudy":
+            return UIImage(named: "rain-cloud")!
+            
+        case "clearDay":
+            return UIImage(named: "Clear")!
+            
+        case "rain":
+            return UIImage(named: "rain")!
+            
+        case "snow":
+            return UIImage(named: "rain")!
+            
+        case "clearNight":
+            return UIImage(named: "moon-and-stars")!
+            
+        case "sleet":
+            return UIImage(named: "sleet")!
+            
+        case "wind":
+            return UIImage(named: "windy-weather")!
+            
+        case "fog":
+            return UIImage(named: "fog")!
+            
+        default:
+            return UIImage(named: "Clear")!
+        }
+        
+    }
     func getWeatherData(lat : Double, lon : Double) {
         let url = "https://api.darksky.net/forecast/ed7e08cdf6c2bcd62440207c1a9b34e1/\(lat),\(lon)"
         Alamofire.request(url, method: .get).responseData { response in
@@ -149,9 +180,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
     }
         
-        
-        
-        
     /*
     // MARK: - Navigation
 
@@ -164,3 +192,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 }
 }
+
+//extension UINavigationBar {
+//    func changeFont() {
+//        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name:"Poppins-Medium", size: 20)!]
+//    }
+//}

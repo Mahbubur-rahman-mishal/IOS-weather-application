@@ -49,6 +49,8 @@ class CityListViewController: UIViewController, UITableViewDataSource, UITableVi
         let nib = UINib(nibName: "LocationNameTableViewCell", bundle: Bundle.main)
         tableView.register(nib , forCellReuseIdentifier: "LocationNameTableViewCell")
         title = "City Name"
+//        let temp = IsoCountryCodes.searchByCountryName("Bangladesh")
+//        print(temp?.alpha2 ?? "")
         
         // Do any additional setup after loading the view.
     }
@@ -94,7 +96,8 @@ class CityListViewController: UIViewController, UITableViewDataSource, UITableVi
                     let temp = String(Int(5.0 / 9.0 * (Double(weather.currently.temperature) - 32.0)))
                     cell.locationLabel.text = self.savedPlace[indexPath.row].name
                     cell.tempLabel.text = "\(temp)°C"
-                    //        cell.tempImage = "Clear.png"
+                    cell.tempImage.image = self.setIcon(icon: weather.currently.icon)
+                    print(weather.currently.icon)
                 } catch {
                     print(error)
                 }
@@ -122,7 +125,38 @@ class CityListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-
+    func setIcon(icon: String) -> UIImage {
+        switch icon {
+        case "cloudy":
+            return UIImage(named: "rain-cloud")!
+            
+        case "clearDay":
+            return UIImage(named: "Clear")!
+            
+        case "rain":
+            return UIImage(named: "rain")!
+            
+        case "snow":
+            return UIImage(named: "rain")!
+            
+        case "clearNight":
+            return UIImage(named: "moon-and-stars")!
+            
+        case "sleet":
+            return UIImage(named: "sleet")!
+            
+        case "wind":
+            return UIImage(named: "windy-weather")!
+            
+        case "fog":
+            return UIImage(named: "fog")!
+            
+        default:
+            return UIImage(named: "Clear")!
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -13,6 +13,7 @@ import RealmSwift
 class Place: Object, Codable {
     @objc dynamic var name: String
     @objc dynamic var lat, lon: Double
+    @objc dynamic var country: String   
 }
 
 //

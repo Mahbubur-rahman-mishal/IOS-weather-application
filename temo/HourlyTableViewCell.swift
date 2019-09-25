@@ -56,7 +56,7 @@ class HourlyTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
             
             collectionCell.Temperature.text = "\(String(Int(temp)))°C"
             print("\(String(Int(temp)))°C")
-//            collectionCell.HourlyTempImage.image = getIcon(icon: hourly.icon)
+            collectionCell.HourlyTempImage.image = setIcon(icon: (hourlyWeatherDatas?.data[indexPath.row].icon)!)
             collectionCell.hourLabel.text = "\(timeFormat.string(from: time))"
         }
         
@@ -87,6 +87,39 @@ class HourlyTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
             }
             
         }
+        
+    }
+    
+    func setIcon(icon: String) -> UIImage {
+        switch icon {
+        case "cloudy":
+            return UIImage(named: "rain-cloud")!
+            
+        case "clearDay":
+            return UIImage(named: "Clear")!
+            
+        case "rain":
+            return UIImage(named: "rain")!
+            
+        case "snow":
+            return UIImage(named: "rain")!
+            
+        case "clearNight":
+            return UIImage(named: "moon-and-stars")!
+            
+        case "sleet":
+            return UIImage(named: "sleet")!
+            
+        case "wind":
+            return UIImage(named: "windy-weather")!
+            
+        case "fog":
+            return UIImage(named: "fog")!
+            
+        default:
+            return UIImage(named: "Clear")!
+        }
+        
         
     }
     

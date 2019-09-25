@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,9 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="96" height="97"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-R7-fV8">
-                        <rect key="frame" x="7" y="7" width="83" height="82"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-R7-fV8">
+                        <rect key="frame" x="7" y="7" width="46" height="87"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRf-oB-RRu">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="21.5"/>
@@ -29,8 +26,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="fNY-go-DSf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="fNY-go-DSf">
                                 <rect key="frame" x="0.0" y="31.5" width="46" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="g2g-2b-jHq"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvG-5H-aol">
                                 <rect key="frame" x="0.0" y="65.5" width="46" height="21.5"/>
@@ -42,6 +42,30 @@
                     </stackView>
                 </subviews>
             </view>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="3MC-KQ-FPz"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="51C-lo-CtD"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="DI3-eV-2P0"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="K9N-zI-fb4"/>
+                <constraint firstAttribute="trailing" secondItem="NY9-R7-fV8" secondAttribute="trailing" constant="43" id="N1J-Tk-96v"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="Rgy-pH-RRh"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="UdN-Ig-Zh7"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="W6g-TX-7i4"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Xmn-gR-Nn3"/>
+                <constraint firstAttribute="trailing" secondItem="NY9-R7-fV8" secondAttribute="trailing" constant="43" id="aCV-jn-nmg"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="b18-Xj-2hP"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="bEa-Bs-ygq"/>
+                <constraint firstAttribute="bottom" secondItem="NY9-R7-fV8" secondAttribute="bottom" constant="3" id="bJc-VC-bGz"/>
+                <constraint firstAttribute="trailing" secondItem="NY9-R7-fV8" secondAttribute="trailing" constant="43" id="hWx-oL-FBW"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="heP-Xp-ygv"/>
+                <constraint firstAttribute="bottom" secondItem="NY9-R7-fV8" secondAttribute="bottom" constant="3" id="iHQ-81-HaT"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="kd9-Pj-tUk"/>
+                <constraint firstAttribute="bottom" secondItem="NY9-R7-fV8" secondAttribute="bottom" constant="3" id="oDN-Q7-hDD"/>
+                <constraint firstAttribute="bottom" secondItem="NY9-R7-fV8" secondAttribute="bottom" constant="3" id="pci-gt-GzN"/>
+                <constraint firstAttribute="trailing" secondItem="NY9-R7-fV8" secondAttribute="trailing" constant="43" id="qdX-K6-gHo"/>
+                <constraint firstItem="NY9-R7-fV8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="wHs-op-D8O"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="96" height="97"/>
             <connections>
