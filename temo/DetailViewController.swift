@@ -26,6 +26,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(hourlyNib, forCellReuseIdentifier: "HourlyTableViewCell")
         let weeklyNib = UINib(nibName: "WeeklyTableViewCell", bundle: Bundle.main)
         tableView.register(weeklyNib, forCellReuseIdentifier: "WeeklyTableViewCell")
+        let extraNib = UINib(nibName: "ExtraTableViewCell", bundle: Bundle.main)
+        tableView.register(extraNib, forCellReuseIdentifier: "ExtraTableViewCell")
+
+        
         title = cityName.uppercased()
         
         
@@ -43,6 +47,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return 1
         case 2:
             return 7
+        case 3:
+            return 1
         default:
             return 1
         }
@@ -91,8 +97,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 weeklyWeatherCell.weeklyImage.image = setIcon(icon: dailyData!.icon)
             }
             return weeklyWeatherCell
+        case 3:
+            let extraCell = tableView.dequeueReusableCell(withIdentifier: "ExtraTableViewCell", for: indexPath) as! ExtraTableViewCell
+            extraCell.extra_weather = weatherData
+            extraCell.delegate = self
             
-            
+            return extraCell
+   
             
         default:
             let defaultCell = tableView.dequeueReusableCell(withIdentifier: "CurrentWeatherTableViewCell", for: indexPath) as! CurrentWeatherTableViewCell
@@ -104,7 +115,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     
@@ -116,14 +127,20 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return "Hourly Forecast"
         } else if section == 2 {
             return "Weekly Forecast"
+        } else if section == 3 {
+            return "More Info"
         } else {return ""}
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
+        case 0:
+            return 150
         case 1:
             return 95
         case 2:
+            return 50
+        case 3:
             return 55
         default:
             return 120
@@ -193,6 +210,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 }
 
+extension DetailViewController : buttontapped{
+    func navigate(weather: Weather) {
+            if let graphViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "GraphViewController") as? GraphViewController {
+                graphViewController.weatherGraphData = weatherData
+            navigationController?.pushViewController(graphViewController, animated: true)
+        }
+    }
+    
+    
+}
 //extension UINavigationBar {
 //    func changeFont() {
 //        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name:"Poppins-Medium", size: 20)!]

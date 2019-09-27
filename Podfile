@@ -6,6 +6,7 @@ target 'temo' do
   use_frameworks!
     pod 'Alamofire'
     pod 'RealmSwift'
+    pod 'Charts'
   # Pods for temo
 
 end

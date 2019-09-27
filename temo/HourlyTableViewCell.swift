@@ -23,6 +23,7 @@ class HourlyTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
         let nib = UINib(nibName: "CollectionViewCell", bundle: Bundle.main)
         HourlyCollectionView.register(nib , forCellWithReuseIdentifier: "CollectionViewCell")
         getWeatherData(lat: lat, lon: lon)
+        print(lat,lon)
         //print(hourlyWeatherData?.summary)
         // Initialization code
 //        if hourlyWeatherData != nil{
@@ -48,29 +49,27 @@ class HourlyTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = HourlyCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         if let hourly = hourlyWeatherDatas?.data[indexPath.row] {
-            let temp = ((hourly.temperature - 32) * (5/9))
+            let temp = ((hourly.temperature - 32) * (0.55))
             let timeFormat = DateFormatter()
             timeFormat.timeStyle = .short
             timeFormat.dateFormat = "HH:00"
             let time = Date(timeIntervalSince1970: TimeInterval(hourly.time))
             
             collectionCell.Temperature.text = "\(String(Int(temp)))°C"
-            print("\(String(Int(temp)))°C")
+//            print("\(String(Int(temp)))°C")
+//            print(temp)
+//            print(indexPath.row)
             collectionCell.HourlyTempImage.image = setIcon(icon: (hourlyWeatherDatas?.data[indexPath.row].icon)!)
             collectionCell.hourLabel.text = "\(timeFormat.string(from: time))"
         }
         
-        if hourlyWeatherDatas != nil {
-            print("got data")
-        }else {
-            print("no data")
-        }
         
         return collectionCell
     }
     
     func getWeatherData(lat : Double, lon : Double) {
         let url = "https://api.darksky.net/forecast/ed7e08cdf6c2bcd62440207c1a9b34e1/\(lat),\(lon)"
+        print(lat,lon)
         Alamofire.request(url, method: .get).responseData { response in
             if response.result.isFailure, let error = response.result.error {
                 print(error)

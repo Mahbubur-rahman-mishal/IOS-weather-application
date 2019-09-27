@@ -19,7 +19,7 @@ class Currently: Codable {
     let time: Int
     let summary: String
     let icon: String
-    let temperature: Double
+    let temperature, precipProbability: Double
     let uvIndex: Int
     
 }
